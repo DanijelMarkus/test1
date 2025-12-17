@@ -1,4 +1,7 @@
 {
+  "name": "danci",
+  "version": "1.0.0",
+  "description": "Danci web app with Entra ID SSO and Copilot-backed API",
   "name": "friday-assistant",
   "version": "1.0.0",
   "private": true,
@@ -8,6 +11,27 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/msal-browser": "^4.27.0",
+    "@azure/msal-react": "^3.0.23",
+    "next": "^16.0.10",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/node": "^25.0.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.23",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.0.10",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
   "dependencies": {
     "@azure/msal-browser": "^3.7.1",
     "@azure/msal-react": "^2.0.9",

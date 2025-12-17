@@ -1,4 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { Orchestrator } from '@/lib/orchestrator';
+
+const orchestrator = new Orchestrator();
+
+/**
+ * POST /api/orchestrator
+ * Main endpoint for processing user queries through the orchestrator
+ */
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json();
+    const { query, userId, context } = body;
+
+    if (!query) {
+      return NextResponse.json(
+        { success: false, error: 'Query is required' },
 import { getOrchestrator } from '@/lib/agents/orchestrator';
 import { OrchestratorRequest } from '@/lib/types';
 
@@ -26,6 +42,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const response = await orchestrator.process({
+      query,
+      userId,
+      context,
+    });
+
+    return NextResponse.json(response);
+  } catch (error) {
     // Create orchestrator request
     const orchestratorRequest: OrchestratorRequest = {
       utterance,
