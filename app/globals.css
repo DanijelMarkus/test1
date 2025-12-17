@@ -16,6 +16,10 @@
   }
 }
 
+  --background-start-rgb: 249, 250, 251;
+  --background-end-rgb: 255, 255, 255;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -30,4 +34,5 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  min-height: 100vh;
 }
