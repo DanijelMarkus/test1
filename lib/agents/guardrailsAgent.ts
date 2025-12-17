@@ -74,9 +74,15 @@ export class GuardrailsAgent {
   }
 
   private sanitize(input: string): string {
-    // Basic sanitization - remove HTML tags and trim
+    // HTML entity encoding approach - safer than regex-based tag removal
+    // This converts all special HTML characters to their entity equivalents
     return input
-      .replace(/<[^>]*>/g, '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#x27;')
+      .replace(/\//g, '&#x2F;')
       .trim();
   }
 }

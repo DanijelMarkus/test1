@@ -54,7 +54,7 @@ export default function ActionsCard() {
             <div key={task.id} className="border-l-4 border-green-500 pl-3">
               <p className="font-semibold text-gray-800">{task.title}</p>
               <div className="flex justify-between text-sm">
-                <span className={`text-${task.priority === 'High' ? 'red' : 'gray'}-600`}>
+                <span className={task.priority === 'High' ? 'text-red-600' : 'text-gray-600'}>
                   {task.priority}
                 </span>
                 <span className="text-gray-600">{task.status}</span>

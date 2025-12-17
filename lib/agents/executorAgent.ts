@@ -36,7 +36,7 @@ export class ExecutorAgent {
     return results;
   }
 
-  private async executeStep(step: any): Promise<ExecutionResult> {
+  private async executeStep(step: import('./types').PlanStep): Promise<ExecutionResult> {
     try {
       const connector = this.connectorRegistry.getConnector(step.connector || 'custom');
       const data = await connector.execute(step.action, step.params);

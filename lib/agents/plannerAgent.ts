@@ -56,7 +56,7 @@ export class PlannerAgent {
       case 'servicenow_query':
         steps.push({
           id: 'step-1',
-          action: 'query_servicenow',
+          action: 'query',
           connector: 'servicenow',
           params: intent.entities,
         });
@@ -65,7 +65,7 @@ export class PlannerAgent {
       case 'workday_query':
         steps.push({
           id: 'step-1',
-          action: 'query_workday',
+          action: 'query',
           connector: 'workday',
           params: intent.entities,
         });
